@@ -1,0 +1,49 @@
+.main{
+  height:100%;
+  width:100%;
+
+}
+
+
+.column{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.row
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-inline: 5px;
+}
+.card{
+  width:180%;
+  height: 180px;
+
+}
+.swipe {
+  height:300px;
+  width: 600px;
+  
+}
+
+.simg{
+  border-radius: 10px;
+  padding: 5px;
+
+  object-fit: fill;
+}
+.center{
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.img{
+  height: 100px;
+  width: 100%;
+}

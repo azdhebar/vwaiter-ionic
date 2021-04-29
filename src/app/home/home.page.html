@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar mode="ios" color="primary">
+    <ion-button><ion-icon name="person"></ion-icon></ion-button>
+    <ion-title>VWaiter</ion-title>
+    <ion-button slot="end"><ion-icon name="cart"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="main">
+
+  <div class="column">
+    <div class="slider">
+      <ion-slides>
+        <ion-slide>
+          <img class="simg" src="https://images.unsplash.com/photo-1619623495531-2cf3ba190d5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2090&q=80" alt="">
+          <img class="simg" src="https://images.unsplash.com/photo-1619623495531-2cf3ba190d5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2090&q=80" alt="">
+          <img class="simg" src="https://images.unsplash.com/photo-1619623495531-2cf3ba190d5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2090&q=80" alt="">
+        
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="restaurent">
+      <div class="row">
+        <ion-title>Restaurents</ion-title>
+        <ion-button expand="small">See More</ion-button>
+      </div>
+      <div class="center" *ngIf="!isRestaurentsLoaded">
+      <ion-spinner></ion-spinner> 
+      </div>
+        <ion-slides class="swipe" *ngIf="isRestaurentsLoaded">
+          <ion-slide>
+            <ion-card class="card"  *ngFor="let res of restaurents|slice:0:5;">
+              <div class="img">
+              <img src="{{res.image}}" height="100" />
+            </div>
+              <ion-card-header>
+                <ion-card-subtitle>{{res.name}}</ion-card-subtitle>
+                <ion-card-subtitle>{{res.city}}</ion-card-subtitle>
+              </ion-card-header>
+                 </ion-card>
+  
+         
+        </ion-slide>
+        </ion-slides>
+      </div>
+
+    <div class="restaurent">
+      <div class="row">
+        <ion-title>Main Course</ion-title>
+        <ion-button expand="small">See More</ion-button>
+      </div>
+      <div class="center" *ngIf="!isFoodsLoaded">
+      <ion-spinner></ion-spinner> 
+      </div>
+        <ion-slides class="swipe" *ngIf="isFoodsLoaded">
+          <ion-slide>
+            <ion-card class="card"  *ngFor="let food of foods|slice:0:5;">
+              <div class="img">
+              <img src="{{food.image}}" height="100" />
+            </div>
+              <ion-card-header>
+                <ion-card-subtitle>{{food.name}}</ion-card-subtitle>
+              </ion-card-header>
+                 </ion-card>
+  
+         
+        </ion-slide>
+        </ion-slides>
+      </div>
+  
+
+      <div class="restaurent">
+        <div class="row">
+          <ion-title>Category</ion-title>
+          <ion-button expand="small">See More</ion-button>
+        </div>
+        <div class="center" *ngIf="!isCategoryLoaded">
+        <ion-spinner></ion-spinner> 
+        </div>
+          <ion-slides class="swipe" *ngIf="isCategoryLoaded">
+            <ion-slide>
+              <ion-card class="card"  *ngFor="let cat of categories|slice:0:5;">
+                <div class="img">
+                <img src="{{cat.image}}" height="100" />
+              </div>
+                <ion-card-header>
+                  <ion-card-subtitle>{{cat.name}}</ion-card-subtitle>
+                </ion-card-header>
+                   </ion-card>
+    
+           
+          </ion-slide>
+          </ion-slides>
+        </div>
+    
+
+  </div>
+</ion-content>
+

@@ -1,0 +1,7 @@
+{
+  "name": "vwaiter",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

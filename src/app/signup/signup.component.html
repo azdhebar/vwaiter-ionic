@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary" mode="ios">
+    <ion-title >VWaiter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  [fullscreen]=true class="main">
+  <ion-card class="main" *ngIf="errorAPI" color="danger">
+    <ion-card-content>
+      Username already exists!.
+    </ion-card-content>
+    </ion-card>
+
+  <ion-card class="main" >  
+    <ion-card-header>
+      <ion-title>Signup</ion-title>
+    </ion-card-header>
+    <ion-card-content>
+      <br/>
+      <form #f="ngForm" (ngSubmit)="signup(f)">
+      
+        <ion-item color="transparent">
+          <ion-label position="floating">Email</ion-label>
+        <ion-input ngModel email name="email" required type="email"></ion-input>
+        </ion-item>
+        <br/>
+       
+        <ion-item color="transparent">
+        <ion-label position="floating">Username</ion-label>
+      <ion-input ngModel username name="username" required type="text"></ion-input>
+      </ion-item>
+      <br/>
+      <ion-item color="transparent">
+        <ion-label position="floating">Password</ion-label>
+      <ion-input ngModel password required minlength=3 name="password" type="password"></ion-input>
+      </ion-item>
+      <br/>
+      <ion-button type="submit" [disabled]="!f.valid" expand="block">Signup</ion-button>
+    </form>
+      <ion-button (click)="goToLogin()" expand="block" style="text-transform: capitalize;" fill="none">Already Registered?</ion-button>
+      
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
